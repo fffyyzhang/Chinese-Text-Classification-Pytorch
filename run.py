@@ -36,7 +36,11 @@ if __name__ == '__main__':
 
     start_time = time.time()
     print("Loading data...")
+    #padding，截断，字转idx
     vocab, train_data, dev_data, test_data = build_dataset(config, args.word)
+
+
+    #liy - 这个地方为什么不用dataloader？
     train_iter = build_iterator(train_data, config)
     dev_iter = build_iterator(dev_data, config)
     test_iter = build_iterator(test_data, config)
